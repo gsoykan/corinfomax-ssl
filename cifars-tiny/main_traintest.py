@@ -1,24 +1,16 @@
 import torch
 from torch.utils.data import DataLoader
 
-from loss import CovarianceLoss
-
-from model_base_resnet import CovModel, LinModel
-from metrics import correct_top_k, grad_norm
-
-from pretrain_base import pretrain_cov
-from linear_base import linear_train, linear_test
-from lin_classifier import LinClassifier
-import parsing_file
 import data_utils
 import optim_utils
+import parsing_file
 import save_utils_con as save_utils
-
-import copy
-import numpy as np
-import random
-import os
-
+from lin_classifier import LinClassifier
+from linear_base import linear_train, linear_test
+from loss import CovarianceLoss
+from metrics import grad_norm
+from model_base_resnet import CovModel
+from pretrain_base import pretrain_cov
 
 
 def train_test(args):
